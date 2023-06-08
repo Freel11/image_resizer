@@ -1,2 +1,4 @@
 images/*
 resized_images/*
+!images/.gitkeep
+!resized_images/.gitkeep
