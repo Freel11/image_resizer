@@ -25,7 +25,10 @@ def watch_folder():
 
         resized_image = resize_image(file_path, desired_width)
 
-        destination_path = os.path.join(destination_folder, file)
+        filename, extension = os.path.splitext(file)
+        new_filename = filename + "_RESIZED" + extension
+
+        destination_path = os.path.join(destination_folder, new_filename)
         resized_image.save(destination_path)
 
         # os.remove(file_path)
