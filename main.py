@@ -10,7 +10,7 @@ def resize_image(image_path, width):
 
     aspect_ratio = original_height / original_width
 
-    resized_image = image.resize((width, int(width * aspect_ratio)), Image.ANTIALIAS)
+    resized_image = image.resize((width, int(width * aspect_ratio)), Image.LANCZOS)
     return resized_image
 
 def watch_folder():
