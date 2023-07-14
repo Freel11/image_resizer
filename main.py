@@ -25,7 +25,7 @@ def watch_folder():
 
         # resized_image = resize_image(file_path, desired_width)
         image = Image.open(file_path)
-        resized_image = image.resize(2200, 2930, Image.LANCZOS)
+        resized_image = image.resize((2200, 2930), Image.LANCZOS)
 
         filename, extension = os.path.splitext(file)
         new_filename = filename + "_RESIZED" + extension
