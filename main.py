@@ -10,11 +10,12 @@ def resize_image(image_path, width):
 
     aspect_ratio = original_height / original_width
 
-    resized_image = image.resize((width, int(width * aspect_ratio)), Image.LANCZOS)
+    # resized_image = image.resize((width, int(width * aspect_ratio)), Image.LANCZOS)
+    resized_image = image.resize(2200, 2930, Image.LANCZOS)
     return resized_image
 
 def watch_folder():
-    desired_width = int(input("Enter the desired width in pixels: "))
+    # desired_width = int(input("Enter the desired width in pixels: "))
 
     files = os.listdir(source_folder)
     new_files = [f for f in files if not f.startswith('.')]
@@ -22,7 +23,9 @@ def watch_folder():
     for file in new_files:
         file_path = os.path.join(source_folder, file)
 
-        resized_image = resize_image(file_path, desired_width)
+        # resized_image = resize_image(file_path, desired_width)
+        image = Image.open(file_path)
+        resized_image = image.resize(2200, 2930, Image.LANCZOS)
 
         filename, extension = os.path.splitext(file)
         new_filename = filename + "_RESIZED" + extension
